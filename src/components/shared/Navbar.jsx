@@ -1,8 +1,117 @@
-import React from 'react'
+'use client'
+import React, { useEffect, useState } from 'react'
 import ThemeToggle from './ThemeToggle'
+import Link from 'next/link'
+import { IoHomeOutline, IoReaderOutline } from "react-icons/io5";
+import { GrProjects } from "react-icons/gr";
+import { GiSkills } from "react-icons/gi";
+import { LiaBlogSolid } from "react-icons/lia";
+import { MdOutlineDashboard } from "react-icons/md";
+import { HiMenu } from "react-icons/hi";
+import { MdOutlineClose } from "react-icons/md";
+import { HiRectangleGroup } from "react-icons/hi2";
+import { useTheme } from 'next-themes';
 
 export default function Navbar() {
+  const [opened, setOpened] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme, resolvedTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+
+  if (!mounted) return null;
+
+  const isDarkMode = resolvedTheme === 'dark';
+
   return (
-    <div><ThemeToggle /></div>
+    <nav className="fixed z-40 flex w-full justify-center bg-transparent dark:bg-black">
+      <div className='relative p-5 flex items-center justify-between w-full'>
+
+        {/* logo & menu button */}
+        <div className='w-1/2 lg:w-1/3 flex items-center gap-5'>
+          <div onClick={() => setOpened(!opened)} className='block lg:hidden'>
+            {opened ?
+              <MdOutlineClose className='font-bold text-[25px] dark:text-base-100' />
+              :
+
+              <HiMenu className='font-bold text-[25px] dark:text-base-100' />
+            }
+          </div>
+          <span className='font-bold text-black dark:text-base-100 text-[26px]'>Shawal <span className='text-secondary'>Islam</span></span>
+        </div>
+
+        {/* links */}
+        <div className="w-1/3 hidden lg:flex gap-5 items-center justify-center flex-row">
+          <Link href={`/`} className='h-8 w-8 flex items-center justify-center hover:bg-base-300 bg-transparent rounded-lg'>
+            <IoHomeOutline className='font-bold text-[25px] dark:text-base-100 hover:dark:text-black' />
+          </Link>
+          <Link href={`/about`} className='h-8 w-8 flex items-center justify-center hover:bg-base-300 bg-transparent rounded-lg'>
+            <IoReaderOutline className='font-bold text-[29px] text-gray-600 dark:text-base-100 hover:dark:text-black' />
+          </Link>
+          <Link href={`/projects`} className='h-8 w-8 flex items-center justify-center hover:bg-base-300 bg-transparent rounded-lg'>
+            <GrProjects className='font-bold text-[20px] dark:text-base-100 hover:dark:text-black' />
+          </Link>
+          <Link href={`/skills`} className='h-8 w-8 flex items-center justify-center hover:bg-base-300 bg-transparent rounded-lg'>
+            <GiSkills className='font-bold text-2xl dark:text-base-100 hover:dark:text-black' />
+          </Link>
+          <Link href={`/blogs`} className='h-8 w-8 flex items-center justify-center hover:bg-base-300 bg-transparent rounded-lg'>
+            <LiaBlogSolid className='font-bold text-[28px] dark:text-base-100 hover:dark:text-black' />
+          </Link>
+          <Link href={`/dashboard`} className='h-8 w-8 flex items-center justify-center hover:bg-base-300 bg-transparent rounded-lg'>
+            <MdOutlineDashboard className='font-bold text-2xl dark:text-base-100 hover:dark:text-black' />
+          </Link>
+          <ThemeToggle />
+        </div>
+
+        {/* hire me button */}
+        <div className="w-1/2 lg:w-1/3 flex justify-end">
+          <button className='flex items-center gap-2 border px-2 btn'>
+            <HiRectangleGroup className='text-2xl text-secondary' />
+            <span className='font-semibold text-lg'>Contact me</span>
+          </button>
+        </div>
+
+
+        {/* links mobile devces */}
+        <div>
+          {opened && <div className='bg-base-200 dark:bg-gray-900 rounded-r-lg p-5 absolute left-0 top-20 h-auto'>
+            <div className="z-50 flex gap-5 items- justify- flex-col">
+              <Link href={`/`} onClick={() => setOpened(!opened)} className='p-[5px] flex gap-5 hover:bg-gray-200 hover:dark:bg-gray-700 bg-transparent dark:text-base-100   rounded-lg'>
+                <IoHomeOutline className='font-bold text-[25px] dark:text-base-100 ' />
+                <span className='font-semibold text-lg'>Home</span>
+              </Link>
+              <Link href={`/about`} onClick={() => setOpened(!opened)} className='p-[5px] flex gap-5 hover:bg-gray-200 hover:dark:bg-gray-700 bg-transparent dark:text-base-100   rounded-lg'>
+                <IoReaderOutline className='font-bold text-[25px] dark:text-base-100 ' />
+                <span className='font-semibold text-lg'>About</span>
+              </Link>
+              <Link href={`/projects`} onClick={() => setOpened(!opened)} className='p-[5px] flex gap-5 hover:bg-gray-200 hover:dark:bg-gray-700 bg-transparent dark:text-base-100   rounded-lg'>
+                <GrProjects className='font-bold text-[25px] dark:text-base-100 ' />
+                <span className='font-semibold text-lg'>Projects</span>
+              </Link>
+              <Link href={`/skills`} onClick={() => setOpened(!opened)} className='p-[5px] flex gap-5 hover:bg-gray-200 hover:dark:bg-gray-700 bg-transparent dark:text-base-100   rounded-lg'>
+                <GiSkills className='font-bold text-[25px] dark:text-base-100 ' />
+                <span className='font-semibold text-lg'>Skills</span>
+              </Link>
+              <Link href={`/blogs`} onClick={() => setOpened(!opened)} className='p-[5px] flex gap-5 hover:bg-gray-200 hover:dark:bg-gray-700 bg-transparent dark:text-base-100   rounded-lg'>
+                <LiaBlogSolid className='font-bold text-[25px] dark:text-base-100 ' />
+                <span className='font-semibold text-lg'>Blogs</span>
+              </Link>
+              <Link href={`/dashboard`} onClick={() => setOpened(!opened)} className='p-[5px] flex gap-5 hover:bg-gray-200 hover:dark:bg-gray-700 bg-transparent dark:text-base-100   rounded-lg'>
+                <MdOutlineDashboard className='font-bold text-[25px] dark:text-base-100 ' />
+                <span className='font-semibold text-lg'>Dashboard</span>
+              </Link>
+              <div href={`/`} onClick={() => setOpened(!opened)} className=' flex gap-5 hover:bg-gray-200 hover:dark:bg-gray-700 bg-transparent dark:text-base-100   rounded-lg'>
+                <ThemeToggle />
+                <span onClick={() => setTheme(isDarkMode ? 'light' : 'dark')} className='font-semibold text-lg'>{theme === 'dark' ? 'Dark' : 'Light'}</span>
+              </div>
+            </div>
+          </div>}
+        </div>
+
+      </div>
+    </nav>
   )
 }
