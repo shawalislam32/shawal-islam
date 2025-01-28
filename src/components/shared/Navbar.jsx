@@ -27,26 +27,26 @@ export default function Navbar() {
   const isDarkMode = resolvedTheme === 'dark';
 
   return (
-    <nav className="fixed z-40 flex w-full justify-center bg-transparent dark:bg-black">
-      <div className='relative p-5 flex items-center justify-between w-full'>
+    <nav className="fixed z-40 flex w-full justify-center backdrop-blur-[2px]">
+      <div className='relative p-2 md:p-5 flex items-center justify-between w-full'>
 
         {/* logo & menu button */}
-        <div className='w-1/2 lg:w-1/3 flex items-center gap-5'>
+        <div className='w-1/2 lg:w-1/3 flex items-center gap-2 md:gap-5'>
           <div onClick={() => setOpened(!opened)} className='block lg:hidden'>
             {opened ?
-              <MdOutlineClose className='font-bold text-[25px] dark:text-base-100' />
+              <MdOutlineClose className='font-bold text-[30px] dark:text-base-100' />
               :
 
-              <HiMenu className='font-bold text-[25px] dark:text-base-100' />
+              <HiMenu className='font-bold text-[30px] dark:text-base-100' />
             }
           </div>
-          <span className='font-bold text-black dark:text-base-100 text-[26px]'>Shawal <span className='text-secondary'>Islam</span></span>
+          <span className='font-bold text-black dark:text-base-100 text-[20px] md:text-[26px] lg:text-3xl'>Shawal <span className='text-secondary'>Islam</span></span>
         </div>
 
         {/* links */}
         <div className="w-1/3 hidden lg:flex gap-5 items-center justify-center flex-row">
           <Link href={`/`} className='h-8 w-8 flex items-center justify-center hover:bg-base-300 bg-transparent rounded-lg'>
-            <IoHomeOutline className='font-bold text-[25px] dark:text-base-100 hover:dark:text-black' />
+            <IoHomeOutline className='font-bold text-[26px] dark:text-base-100 hover:dark:text-black' />
           </Link>
           <Link href={`/about`} className='h-8 w-8 flex items-center justify-center hover:bg-base-300 bg-transparent rounded-lg'>
             <IoReaderOutline className='font-bold text-[29px] text-gray-600 dark:text-base-100 hover:dark:text-black' />
@@ -69,43 +69,44 @@ export default function Navbar() {
         {/* hire me button */}
         <div className="w-1/2 lg:w-1/3 flex justify-end">
           <button className='flex items-center gap-2 border px-2 btn'>
-            <HiRectangleGroup className='text-2xl text-secondary' />
-            <span className='font-semibold text-lg'>Contact me</span>
+            <HiRectangleGroup className='text-xl md:text-2xl text-secondary' />
+            <span className='font-bold md:text-lg'>Contact me</span>
           </button>
         </div>
 
 
         {/* links mobile devces */}
         <div>
-          {opened && <div className='bg-base-200 dark:bg-gray-900 rounded-r-lg p-5 absolute left-0 top-20 h-auto'>
+          {opened && <div className='bg-base-200 dark:bg-gray-900 rounded-r-lg p-5 absolute left-0 top-16 md:top-20 h-auto'>
             <div className="z-50 flex gap-5 items- justify- flex-col">
               <Link href={`/`} onClick={() => setOpened(!opened)} className='p-[5px] flex gap-5 hover:bg-gray-200 hover:dark:bg-gray-700 bg-transparent dark:text-base-100   rounded-lg'>
                 <IoHomeOutline className='font-bold text-[25px] dark:text-base-100 ' />
-                <span className='font-semibold text-lg'>Home</span>
+                <span className='font-semibold'>Home</span>
               </Link>
               <Link href={`/about`} onClick={() => setOpened(!opened)} className='p-[5px] flex gap-5 hover:bg-gray-200 hover:dark:bg-gray-700 bg-transparent dark:text-base-100   rounded-lg'>
-                <IoReaderOutline className='font-bold text-[25px] dark:text-base-100 ' />
-                <span className='font-semibold text-lg'>About</span>
+                <IoReaderOutline className='font-bold text-[27px] dark:text-base-100 ' />
+                <span className='font-semibold'>About</span>
               </Link>
-              <Link href={`/projects`} onClick={() => setOpened(!opened)} className='p-[5px] flex gap-5 hover:bg-gray-200 hover:dark:bg-gray-700 bg-transparent dark:text-base-100   rounded-lg'>
-                <GrProjects className='font-bold text-[25px] dark:text-base-100 ' />
-                <span className='font-semibold text-lg'>Projects</span>
+              <Link href={`/projects`} onClick={() => setOpened(!opened)} className='p-[5px] flex hover:bg-gray-200 hover:dark:bg-gray-700 bg-transparent dark:text-base-100   rounded-lg'>
+                &nbsp;
+                <GrProjects className='font-bold text-[20px] dark:text-base-100 ' />
+                <span className='font-semibold'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Projects</span>
               </Link>
               <Link href={`/skills`} onClick={() => setOpened(!opened)} className='p-[5px] flex gap-5 hover:bg-gray-200 hover:dark:bg-gray-700 bg-transparent dark:text-base-100   rounded-lg'>
-                <GiSkills className='font-bold text-[25px] dark:text-base-100 ' />
-                <span className='font-semibold text-lg'>Skills</span>
+                <GiSkills className='font-bold text-[22px] dark:text-base-100 ' />
+                <span className='font-semibold'>Skills</span>
               </Link>
               <Link href={`/blogs`} onClick={() => setOpened(!opened)} className='p-[5px] flex gap-5 hover:bg-gray-200 hover:dark:bg-gray-700 bg-transparent dark:text-base-100   rounded-lg'>
-                <LiaBlogSolid className='font-bold text-[25px] dark:text-base-100 ' />
-                <span className='font-semibold text-lg'>Blogs</span>
+                <LiaBlogSolid className='font-bold text-[26px] dark:text-base-100 ' />
+                <span className='font-semibold'>Blogs</span>
               </Link>
               <Link href={`/dashboard`} onClick={() => setOpened(!opened)} className='p-[5px] flex gap-5 hover:bg-gray-200 hover:dark:bg-gray-700 bg-transparent dark:text-base-100   rounded-lg'>
-                <MdOutlineDashboard className='font-bold text-[25px] dark:text-base-100 ' />
-                <span className='font-semibold text-lg'>Dashboard</span>
+                <MdOutlineDashboard className='font-bold text-[24px] dark:text-base-100 ' />
+                <span className='font-semibold'>Dashboard</span>
               </Link>
-              <div href={`/`} onClick={() => setOpened(!opened)} className=' flex gap-5 hover:bg-gray-200 hover:dark:bg-gray-700 bg-transparent dark:text-base-100   rounded-lg'>
+              <div href={`/`} onClick={() => setOpened(!opened)} className=' flex gap-5 hover:bg-gray-200 hover:dark:bg-gray-700 bg-transparent dark:text-base-100  items-center rounded-lg'>
                 <ThemeToggle />
-                <span onClick={() => setTheme(isDarkMode ? 'light' : 'dark')} className='font-semibold text-lg'>{theme === 'dark' ? 'Dark' : 'Light'}</span>
+                <span onClick={() => setTheme(isDarkMode ? 'light' : 'dark')} className='font-semibold'>{theme === 'dark' ? 'Dark' : 'Light'}</span>
               </div>
             </div>
           </div>}
