@@ -4,7 +4,7 @@ import Skills from './Skills'
 
 export default function HomePage() {
   return (
-    <div className='space-y-10'>
+    <div className='space-y-10 max-w-screen-xl mx-auto'>
         <Banner/>
         <Skills/>
     </div>

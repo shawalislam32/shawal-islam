@@ -9,7 +9,7 @@ import { MdOutlineFileDownload } from "react-icons/md";
 
 const Banner = () => {
     return (
-        <div className='flex flex-col lg:flex-row items-center justify-between rounded-xl bg-base-200 dark:bg-gray-800 p-5 md:p-10 lg:p-14 gap-10'>
+        <div className='flex flex-col lg:flex-row items-center justify-between rounded-xl bg-base-200 dark:bg-gray-800/30 p-5 md:p-10 lg:p-14 gap-10 backdrop-blur-[2px] '>
             <div className="flex flex-col items-center justify-center w-full lg:w-1/2">
                 <div className="p-2 border-secondary border-[2px] hover:bg-blue-500/20 duration-300 rounded-2xl lg:rounded-full">
                     <Image src={`/shawal.png`} alt='Shawal Islam Photo' height={1080} width={1080} className='rounded-2xl lg:rounded-full w-[300px] mx-auto' />
