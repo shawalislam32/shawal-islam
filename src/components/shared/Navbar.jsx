@@ -42,7 +42,7 @@ export default function Navbar() {
               <HiMenu className='font-bold text-[30px] dark:text-base-100' />
             }
           </div>
-          <span className='font-bold text-black dark:text-base-100 text-[20px] md:text-[26px] lg:text-3xl'>Shawal <span className='text-secondary'>Islam</span></span>
+          <Link onClick={() => setActive('home')} href={`/`} className='font-bold text-black dark:text-base-100 text-[20px] md:text-[26px] lg:text-3xl'>Shawal <span className='text-secondary'>Islam</span></Link>
         </div>
 
         {/* links */}
@@ -87,16 +87,16 @@ export default function Navbar() {
                 <IoHomeOutline className='font-bold text-[25px] dark:text-base-100 ' />
                 <span className='font-semibold'>Home</span>
               </Link>
-              <Link href={`/about`} onClick={() => setOpened(!opened)} className='p-[5px] flex gap-5 hover:bg-gray-200 hover:dark:bg-gray-700 bg-transparent dark:text-base-100   rounded-lg'>
+              <Link href={`/#about`} onClick={() => setOpened(!opened)} className='p-[5px] flex gap-5 hover:bg-gray-200 hover:dark:bg-gray-700 bg-transparent dark:text-base-100   rounded-lg'>
                 <IoReaderOutline className='font-bold text-[27px] dark:text-base-100 ' />
                 <span className='font-semibold'>About</span>
               </Link>
-              <Link href={`/projects`} onClick={() => setOpened(!opened)} className='p-[5px] flex hover:bg-gray-200 hover:dark:bg-gray-700 bg-transparent dark:text-base-100   rounded-lg'>
+              <Link href={`/#projects`} onClick={() => setOpened(!opened)} className='p-[5px] flex hover:bg-gray-200 hover:dark:bg-gray-700 bg-transparent dark:text-base-100   rounded-lg'>
                 &nbsp;
                 <GrProjects className='font-bold text-[20px] dark:text-base-100 ' />
                 <span className='font-semibold'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Projects</span>
               </Link>
-              <Link href={`/skills`} onClick={() => setOpened(!opened)} className='p-[5px] flex gap-5 hover:bg-gray-200 hover:dark:bg-gray-700 bg-transparent dark:text-base-100   rounded-lg'>
+              <Link href={`/#skills`} onClick={() => setOpened(!opened)} className='p-[5px] flex gap-5 hover:bg-gray-200 hover:dark:bg-gray-700 bg-transparent dark:text-base-100   rounded-lg'>
                 <GiSkills className='font-bold text-[22px] dark:text-base-100 ' />
                 <span className='font-semibold'>Skills</span>
               </Link>
