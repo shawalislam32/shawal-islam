@@ -40,7 +40,7 @@ const Banner = () => {
                 </div>
                 <p className='text-black dark:text-base-100 text-sm md:text-[18px]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est laudantium doloremque alias minima dolores id iusto quasi qui magnam aliquid?</p>
                 <div className="pt-3 flex gap-4">
-                    <Link href={`https://drive.google.com/uc?export=download&id=1fXoyWDzFV_VS81ISMkK-G0vCHc7_nw8j`} target='_blank' className="btn btn-outline dark:border-white dark:text-white hover:dark:bg-base-100 hover:dark:text-black hover:bg-black duration-300lex gap-2 items-center">
+                    <Link href={`https://drive.google.com/uc?export=download&id=1fXoyWDzFV_VS81ISMkK-G0vCHc7_nw8j`} className="btn btn-outline dark:border-white dark:text-white hover:dark:bg-base-100 hover:dark:text-black hover:bg-black duration-300lex gap-2 items-center">
                         <span>Download Resume</span>
                         <MdOutlineFileDownload />
                     </Link>

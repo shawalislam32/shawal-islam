@@ -48,13 +48,13 @@ export default function Navbar() {
           <Link href={`/`} className='h-8 w-8 flex items-center justify-center hover:bg-base-300 bg-transparent rounded-lg'>
             <IoHomeOutline className='font-bold text-[26px] dark:text-base-100 hover:dark:text-black' />
           </Link>
-          <Link href={`/about`} className='h-8 w-8 flex items-center justify-center hover:bg-base-300 bg-transparent rounded-lg'>
+          <Link href={`/#about`} className='h-8 w-8 flex items-center justify-center hover:bg-base-300 bg-transparent rounded-lg'>
             <IoReaderOutline className='font-bold text-[29px] text-gray-600 dark:text-base-100 hover:dark:text-black' />
           </Link>
-          <Link href={`/projects`} className='h-8 w-8 flex items-center justify-center hover:bg-base-300 bg-transparent rounded-lg'>
+          <Link href={`/#projects`} className='h-8 w-8 flex items-center justify-center hover:bg-base-300 bg-transparent rounded-lg'>
             <GrProjects className='font-bold text-[20px] dark:text-base-100 hover:dark:text-black' />
           </Link>
-          <Link href={`/skills`} className='h-8 w-8 flex items-center justify-center hover:bg-base-300 bg-transparent rounded-lg'>
+          <Link href={`/#skills`} className='h-8 w-8 flex items-center justify-center hover:bg-base-300 bg-transparent rounded-lg'>
             <GiSkills className='font-bold text-2xl dark:text-base-100 hover:dark:text-black' />
           </Link>
           <Link href={`/blogs`} className='h-8 w-8 flex items-center justify-center hover:bg-base-300 bg-transparent rounded-lg'>
