@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import { useTheme } from 'next-themes';
 import Image from 'next/image';
 import React from 'react';
+import LoadingPage from '../shared/LoadingPage';
 
 const loadProjects = async () => {
     return await getSkills();
@@ -19,7 +20,7 @@ const Skills = () => {
     } = useQuery({ queryKey: ['projects'], queryFn: loadProjects });
 
     if (isLoading) {
-        return <div>Loading...</div>;
+        return <LoadingPage />;
     }
 
     if (isError) {
