@@ -16,19 +16,19 @@ const Banner = () => {
                 </div>
                 {/* links */}
                 <div className="flex gap-3 items-center justify-center mt-10">
-                    <Link href={`/`} className='p-2 rounded-full bg-white hover:bg-black hover:text-white duration-300'>
+                    <Link href={`/`} className='p-2 rounded-full bg-white hover:bg-black hover:text-white duration-300 tooltip  tooltip-bottom' data-tip="GitHub">
                         <FiGithub className='text-2xl' />
                     </Link>
-                    <Link href={`/`} className='p-2 rounded-full bg-white hover:bg-blue-600 hover:text-white duration-300'>
+                    <Link href={`/`} className='p-2 rounded-full bg-white hover:bg-blue-600 hover:text-white duration-300 tooltip  tooltip-bottom' data-tip="LinkedIn">
                         <FiLinkedin className='text-2xl' />
                     </Link>
-                    <Link href={`/`} className='p-2 rounded-full bg-white hover:bg-blue-500 hover:text-white duration-300'>
+                    <Link href={`/`} className='p-2 rounded-full bg-white hover:bg-blue-500 hover:text-white duration-300 tooltip  tooltip-bottom' data-tip="X">
                         <FiTwitter className='text-2xl' />
                     </Link>
-                    <Link href={`/`} className='p-2 rounded-full bg-white hover:bg-blue-700 hover:text-white duration-300'>
+                    <Link href={`/`} className='p-2 rounded-full bg-white hover:bg-blue-700 hover:text-white duration-300 tooltip  tooltip-bottom' data-tip="Facebook">
                         <FiFacebook className='text-2xl' />
                     </Link>
-                    <Link href={`/`} className='p-2 rounded-full bg-white hover:bg-black hover:text-white duration-300'>
+                    <Link href={`/`} className='p-2 rounded-full bg-white hover:bg-black hover:text-white duration-300 tooltip  tooltip-bottom' data-tip="Mail">
                         <FiMail className='text-2xl' />
                     </Link>
                 </div>

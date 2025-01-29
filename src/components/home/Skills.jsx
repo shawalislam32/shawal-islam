@@ -35,7 +35,7 @@ const Skills = () => {
         My Skills
       </h2>
             <div className='flex flex-wrap gap-5 items-center justify-center pt-3'>
-                {skills.map(skill => <div key={skill.id}>
+                {skills.map(skill => <div className="tooltip" data-tip={skill.name} key={skill.id}>
                     <Image src={`${skill.image}&theme=${theme === 'dark' ? 'dark' : 'light'}`} alt={skill.name} height={1080} width={1080} className='w-14 md:w-16 lg:w-20 border-[3px] border-transparent hover:border-secondary rounded-3xl duration-300' />
                 </div>)}
             </div>

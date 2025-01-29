@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import ThemeToggle from './ThemeToggle'
 import Link from 'next/link'
 import { IoHomeOutline, IoReaderOutline } from "react-icons/io5";
@@ -11,12 +11,14 @@ import { HiMenu } from "react-icons/hi";
 import { MdOutlineClose } from "react-icons/md";
 import { HiRectangleGroup } from "react-icons/hi2";
 import { useTheme } from 'next-themes';
+import { ActiveContext } from '@/providers/ActiveProvider';
 
 export default function Navbar() {
   const [opened, setOpened] = useState(false);
+  const { active, setActive } = useContext(ActiveContext);
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme, resolvedTheme } = useTheme();
-
+  console.log(active)
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -45,25 +47,27 @@ export default function Navbar() {
 
         {/* links */}
         <div className="w-1/3 hidden lg:flex gap-5 items-center justify-center flex-row">
-          <Link href={`/`} className='h-8 w-8 flex items-center justify-center hover:bg-base-300 bg-transparent rounded-lg'>
-            <IoHomeOutline className='font-bold text-[26px] dark:text-base-100 hover:dark:text-black' />
+          <Link onClick={() => setActive('home')} href={`/`} className={`h-8 w-8 flex items-center justify-center hover:bg-base-300 bg-transparent rounded-lg tooltip  tooltip-bottom dark:text-black ${active === 'home' && 'bg-base-300'}`} data-tip="Home">
+            <IoHomeOutline className={`font-bold text-[26px] dark:text-base-100 hover:dark:text-black ${active === 'home' && 'dark:text-black'}`} />
           </Link>
-          <Link href={`/#about`} className='h-8 w-8 flex items-center justify-center hover:bg-base-300 bg-transparent rounded-lg'>
-            <IoReaderOutline className='font-bold text-[29px] text-gray-600 dark:text-base-100 hover:dark:text-black' />
+          <Link onClick={() => setActive('about')} href={`/#about`} className={`h-8 w-8 flex items-center justify-center hover:bg-base-300 bg-transparent rounded-lg tooltip  tooltip-bottom ${active === 'about' && 'bg-base-300'}`} data-tip="About">
+            <IoReaderOutline className={`font-bold text-[26px] dark:text-base-100 hover:dark:text-black ${active === 'about' && 'dark:text-black'}`} />
           </Link>
-          <Link href={`/#projects`} className='h-8 w-8 flex items-center justify-center hover:bg-base-300 bg-transparent rounded-lg'>
-            <GrProjects className='font-bold text-[20px] dark:text-base-100 hover:dark:text-black' />
+          <Link onClick={() => setActive('projects')} href={`/#projects`} className={`h-8 w-8 flex items-center justify-center hover:bg-base-300 bg-transparent rounded-lg tooltip  tooltip-bottom ${active === 'projects' && 'bg-base-300'}`} data-tip="Projects">
+            <GrProjects className={`font-bold text-[26px] dark:text-base-100 hover:dark:text-black ${active === 'projects' && 'dark:text-black'}`} />
           </Link>
-          <Link href={`/#skills`} className='h-8 w-8 flex items-center justify-center hover:bg-base-300 bg-transparent rounded-lg'>
-            <GiSkills className='font-bold text-2xl dark:text-base-100 hover:dark:text-black' />
+          <Link onClick={() => setActive('skills')} href={`/#skills`} className={`h-8 w-8 flex items-center justify-center hover:bg-base-300 bg-transparent rounded-lg tooltip  tooltip-bottom ${active === 'skills' && 'bg-base-300'}`} data-tip="Skills">
+            <GiSkills className={`font-bold text-[26px] dark:text-base-100 hover:dark:text-black ${active === 'skills' && 'dark:text-black'}`} />
           </Link>
-          <Link href={`/blogs`} className='h-8 w-8 flex items-center justify-center hover:bg-base-300 bg-transparent rounded-lg'>
-            <LiaBlogSolid className='font-bold text-[28px] dark:text-base-100 hover:dark:text-black' />
+          <Link onClick={() => setActive('blogs')} href={`/blogs`} className={`h-8 w-8 flex items-center justify-center hover:bg-base-300 bg-transparent rounded-lg tooltip  tooltip-bottom ${active === 'blogs' && 'bg-base-300'}`} data-tip="Blogs">
+            <LiaBlogSolid className={`font-bold text-[26px] dark:text-base-100 hover:dark:text-black ${active === 'blogs' && 'dark:text-black'}`} />
           </Link>
-          <Link href={`/dashboard`} className='h-8 w-8 flex items-center justify-center hover:bg-base-300 bg-transparent rounded-lg'>
-            <MdOutlineDashboard className='font-bold text-2xl dark:text-base-100 hover:dark:text-black' />
+          <Link onClick={() => setActive('dashboard')} href={`/dashboard`} className={`h-8 w-8 flex items-center justify-center hover:bg-base-300 bg-transparent rounded-lg tooltip  tooltip-bottom ${active === 'dashboard' && 'bg-base-300'}`} data-tip="Dashboard">
+            <MdOutlineDashboard className={`font-bold text-[26px] dark:text-base-100 hover:dark:text-black ${active === 'dashboard' && 'dark:text-black'}`} />
           </Link>
-          <ThemeToggle />
+          <div className='tooltip  tooltip-bottom' data-tip={`${theme === 'dark' ? 'Dark Theme' : 'Light Theme'}`}>
+            <ThemeToggle />
+          </div>
         </div>
 
         {/* hire me button */}

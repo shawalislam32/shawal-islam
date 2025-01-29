@@ -4,6 +4,7 @@ import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import NextThemeProvider from "@/providers/NextThemeProvider";
 import TanstackQuearyProvider from "@/providers/TanstackQuearyProvider";
+import ActiveProvider from "@/providers/ActiveProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,9 +32,11 @@ export default function RootLayout({ children }) {
       >
         <NextThemeProvider>
           <TanstackQuearyProvider>
-            <Navbar />
-            {children}
-            <Footer />
+            <ActiveProvider>
+              <Navbar />
+              {children}
+              <Footer />
+            </ActiveProvider>
           </TanstackQuearyProvider>
         </NextThemeProvider>
       </body>
