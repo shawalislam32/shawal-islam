@@ -5,7 +5,6 @@ import React from 'react';
 import { FiFacebook, FiGithub, FiLinkedin, FiMail, FiTwitter } from "react-icons/fi";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { MdOutlineFileDownload } from "react-icons/md";
-import Typewriter from 'typewriter-effect';
 
 
 const Banner = () => {
@@ -36,19 +35,9 @@ const Banner = () => {
             </div>
             <div className="w-full lg:w-1/2 space-y-2 lg:space-y-4">
                 <h1 className='font-bold uppercase text-black dark:text-base-100 text-[15px] lg:text-2xl'>MD. Shawal Islam</h1>
-                <h1 className='text-[22px] lg:text-4xl font-extrabold text-secondary'>
-                    <Typewriter
-                        options={{
-                            strings: [
-                                'Department of CES in RUET',
-                                'Software Engineer',
-                            ],
-                            autoStart: true,
-                            loop: true,
-                            deleteSpeed: 50,
-                        }}
-                    />
-                </h1>
+                <div className='text-[22px] lg:text-4xl font-extrabold text-secondary'>
+                    Department of CES in RUET
+                </div>
                 <p className='text-black dark:text-base-100 text-sm md:text-[18px]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est laudantium doloremque alias minima dolores id iusto quasi qui magnam aliquid?</p>
                 <div className="pt-3 flex gap-4">
                     <Link href={`https://drive.google.com/uc?export=download&id=1fXoyWDzFV_VS81ISMkK-G0vCHc7_nw8j`} target='_blank' className="btn btn-outline dark:border-white dark:text-white hover:dark:bg-base-100 hover:dark:text-black hover:bg-black duration-300lex gap-2 items-center">
