@@ -31,8 +31,10 @@ const Skills = () => {
 
     return (
         <div id='skills'>
-            <h1 className='text-2xl text-black dark:text-base-100 font-bold text-center mb-5'>My Skills</h1>
-            <div className='flex flex-wrap gap-5 items-center justify-center'>
+            <h2 className="mb-4 text-secondary text-center text-2xl font-bold lg:text-3xl">
+        My Skills
+      </h2>
+            <div className='flex flex-wrap gap-5 items-center justify-center pt-3'>
                 {skills.map(skill => <div key={skill.id}>
                     <Image src={`${skill.image}&theme=${theme === 'dark' ? 'dark' : 'light'}`} alt={skill.name} height={1080} width={1080} className='w-14 md:w-16 lg:w-20 border-[3px] border-transparent hover:border-secondary rounded-3xl duration-300' />
                 </div>)}
