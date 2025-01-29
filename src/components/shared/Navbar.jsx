@@ -35,12 +35,7 @@ export default function Navbar() {
         {/* logo & menu button */}
         <div className='w-1/2 lg:w-1/3 flex items-center gap-2 md:gap-5'>
           <div onClick={() => setOpened(!opened)} className='block lg:hidden'>
-            {opened ?
-              <MdOutlineClose className='font-bold text-[30px] dark:text-base-100' />
-              :
-
-              <HiMenu className='font-bold text-[30px] dark:text-base-100' />
-            }
+            <HiMenu className='font-bold text-[30px] dark:text-base-100  hover:scale-110' />
           </div>
           <Link onClick={() => setActive('home')} href={`/`} className='font-bold text-black dark:text-base-100 text-[20px] md:text-[26px] lg:text-3xl'>Shawal <span className='text-secondary'>Islam</span></Link>
         </div>
@@ -81,7 +76,8 @@ export default function Navbar() {
 
         {/* links mobile devces */}
         <div>
-          {opened && <div className='bg-base-200 dark:bg-gray-900 rounded-r-lg p-5 absolute left-0 top-16 md:top-20 h-auto'>
+          {opened && <div className='bg-base-200 dark:bg-gray-900 rounded-r-lg p-5 absolute left-0 top-0 w-1/2 md:w-80 h-auto duration-300'>
+            <MdOutlineClose onClick={() => setOpened(false)} className='font-bold text-[30px] dark:text-base-100 mb-5 hover:scale-110' />
             <div className="z-50 flex gap-5 items- justify- flex-col">
               <Link href={`/`} onClick={() => setOpened(!opened)} className='p-[5px] flex gap-5 hover:bg-gray-200 hover:dark:bg-gray-700 bg-transparent dark:text-base-100   rounded-lg'>
                 <IoHomeOutline className='font-bold text-[25px] dark:text-base-100 ' />
@@ -108,7 +104,7 @@ export default function Navbar() {
                 <MdOutlineDashboard className='font-bold text-[24px] dark:text-base-100 ' />
                 <span className='font-semibold'>Dashboard</span>
               </Link>
-              <div href={`/`} onClick={() => setOpened(!opened)} className=' flex gap-5 hover:bg-gray-200 hover:dark:bg-gray-700 bg-transparent dark:text-base-100  items-center rounded-lg'>
+              <div href={`/`} onClick={() => setOpened(!opened)} className=' flex gap-5 hover:bg-gray-200 hover:dark:bg-gray-700 bg-transparent dark:text-base-100  items-center rounded-lg cursor-pointer'>
                 <ThemeToggle />
                 <span onClick={() => setTheme(isDarkMode ? 'light' : 'dark')} className='font-semibold'>{theme === 'dark' ? 'Dark' : 'Light'}</span>
               </div>

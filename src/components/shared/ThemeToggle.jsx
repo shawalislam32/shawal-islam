@@ -20,7 +20,7 @@ const ThemeToggle = () => {
   const isDarkMode = resolvedTheme === 'dark';
 
   return (
-    <div className="p-1 hover:bg-base-300 bg-transparent rounded-lg">
+    <div className="p-1 hover:bg-base-300 bg-transparent rounded-lg cursor-pointer">
       <div onClick={() => setTheme(isDarkMode ? 'light' : 'dark')} >
         {theme === 'light' ?
           <IoSunnySharp className="dark:text-base-100 hover:dark:text-black" size={25} />
