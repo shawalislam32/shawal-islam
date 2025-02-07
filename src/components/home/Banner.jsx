@@ -5,6 +5,7 @@ import React from 'react';
 import { FiFacebook, FiGithub, FiLinkedin, FiMail, FiTwitter } from "react-icons/fi";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { MdOutlineFileDownload } from "react-icons/md";
+import { Typewriter } from 'react-simple-typewriter';
 
 
 const Banner = () => {
@@ -36,7 +37,15 @@ const Banner = () => {
             <div className="w-full lg:w-1/2 space-y-2 lg:space-y-4">
                 <h1 className='font-bold uppercase text-black dark:text-base-100 text-[15px] lg:text-2xl'>MD. Shawal Islam</h1>
                 <div className='text-[22px] lg:text-4xl font-extrabold text-secondary'>
-                    Department of CES in RUET
+                    <Typewriter
+                        words={["Department of CES in RUET"]}
+                        loop={0} // Infinite loop
+                        cursor
+                        cursorStyle="|"
+                        typeSpeed={50}
+                        deleteSpeed={30}
+                        delaySpeed={1000}
+                    />
                 </div>
                 <p className='text-black dark:text-base-100 text-sm md:text-[18px]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est laudantium doloremque alias minima dolores id iusto quasi qui magnam aliquid?</p>
                 <div className="pt-3 flex gap-4">
