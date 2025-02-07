@@ -10,7 +10,7 @@ export default function Footer() {
     <footer>
       {!isDashboard && (
         <div>
-          <div className="footer footer-center bg-base-200 text-black dark:text-base-100 dark:bg-gray-800/30 backdrop-blur-[2px] items-center p-5 mt-20">
+          <div className="footer footer-center bg-base-200 text-black dark:text-base-100 dark:bg-gray-800/50 backdrop-blur-[2px] items-center p-5 mt-20">
             <nav className="grid grid-flow-col gap-4">
               <a className="link link-hover">About us</a>
               <a className="link link-hover">Contact</a>

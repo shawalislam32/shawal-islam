@@ -15,7 +15,7 @@ const WhatIDo = () => {
 
             <div className="flex flex-col items-center justify-center gap-6 pt-14 md:flex-row lg:gap-24">
                 <div className="">
-                    <div className="flex h-60 w-60 flex-col items-center justify-center gap-1 rounded-xl border-2 border-transparent shadow transition-all duration-300 hover:scale-[1.05] hover:border-blue-400 hover:shadow-lg bg-base-200 dark:bg-gray-800/30 backdrop-blur-[2px] ">
+                    <div className="flex h-60 w-60 flex-col items-center justify-center gap-1 rounded-xl border-2 border-transparent shadow transition-all duration-300 hover:scale-[1.05] hover:border-blue-400 hover:shadow-lg bg-base-200 dark:bg-gray-800/50 backdrop-blur-[2px] ">
                         <Image
                             src={`/web-dev.png`}
                             alt=""
@@ -33,7 +33,7 @@ const WhatIDo = () => {
 
                 </div>
                 <div className="">
-                    <div className="flex h-60 w-60 flex-col items-center justify-center gap-1 rounded-xl border-2 border-transparent shadow transition-all duration-300 hover:scale-[1.05] hover:border-blue-400 hover:shadow-lg bg-base-200 dark:bg-gray-800/30 backdrop-blur-[2px] ">
+                    <div className="flex h-60 w-60 flex-col items-center justify-center gap-1 rounded-xl border-2 border-transparent shadow transition-all duration-300 hover:scale-[1.05] hover:border-blue-400 hover:shadow-lg bg-base-200 dark:bg-gray-800/50 backdrop-blur-[2px] ">
                         <Image
                             src={`/ui-ux.png`}
                             alt=""
@@ -50,7 +50,7 @@ const WhatIDo = () => {
                     </div>
                 </div>
                 <div className="">
-                    <div className="flex h-60 w-60 flex-col items-center justify-center gap-1 rounded-xl border-2 border-transparent shadow transition-all duration-300 hover:scale-[1.05] hover:border-blue-400 hover:shadow-lg bg-base-200 dark:bg-gray-800/30 backdrop-blur-[2px] ">
+                    <div className="flex h-60 w-60 flex-col items-center justify-center gap-1 rounded-xl border-2 border-transparent shadow transition-all duration-300 hover:scale-[1.05] hover:border-blue-400 hover:shadow-lg bg-base-200 dark:bg-gray-800/50 backdrop-blur-[2px] ">
                         <Image
                             src={`/api-dev.png`}
                             alt=""
