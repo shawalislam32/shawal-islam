@@ -7,10 +7,10 @@ import { usePathname } from 'next/navigation';
 
 const DashSidebar = () => {
     const pathName = usePathname();
-    console.log(pathName)
     return (
-        <div className="pt-[77px] h-screen w-52">
-            <div className='h-[calc(100vh-77px)] bg-base-300 dark:bg-gray-900/50  flex flex-col gap-3 p-2 border-r-2 border-r-secondary'>
+        <div className="pt-[77px] h-screen w-52 hidden lg:block">
+            {/* for desktop */}
+            <div className=' h-[calc(100vh-77px)] bg-base-300 dark:bg-gray-900/50  flex flex-col gap-3 p-2 border-r-2 border-r-secondary'>
                 <Link href={`/dashboard`} className={`flex items-center gap-2 p-1 rounded-lg border ${pathName === '/dashboard' && 'bg-base-100'}`}>
                     <MdOutlineManageHistory />
                     <span className="text-black dark:text-base-100 font-semibold">Dashboard</span>
@@ -23,10 +23,17 @@ const DashSidebar = () => {
                     <MdOutlineManageHistory />
                     <span className="text-black dark:text-base-100 font-semibold">Manage Projects</span>
                 </Link>
+                <Link href={`/dashboard/manage-skills`} className={`flex items-center gap-2 p-1 rounded-lg ${pathName === '/dashboard/manage-projects' && 'bg-base-100'}`}>
+                    <MdOutlineManageHistory />
+                    <span className="text-black dark:text-base-100 font-semibold">Manage Skills</span>
+                </Link>
                 <div>
                     <ThemeToggle />
                 </div>
             </div>
+
+
+
         </div>
     );
 };

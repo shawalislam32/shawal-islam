@@ -14,7 +14,7 @@ const LoadingPage = () => {
     if (!mounted) return null;
 
     return (
-        <div className="flex min-h-screen items-center justify-center text-black dark:text-white">
+        <div className="flex min-h-screen items-center justify-center text-black dark:text-white w-full">
             <BarLoader
                 color={theme === 'dark' ? 'white' : 'black'}
                 size={200}

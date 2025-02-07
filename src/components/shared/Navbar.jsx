@@ -21,7 +21,6 @@ export default function Navbar() {
   const { active, setActive } = useContext(ActiveContext);
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme, resolvedTheme } = useTheme();
-  console.log(active)
   useEffect(() => {
     setMounted(true);
   }, []);
