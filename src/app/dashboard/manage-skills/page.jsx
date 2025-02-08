@@ -35,7 +35,7 @@ const AddSkill = () => {
             </h2>
             {isError && <div className='text-black dark:text-base-100 pt-32'>Failed to load projects. Please try again later.</div>}
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 items-center justify-center pt-3 w-full'>
-                {skills.map(skill => <div key={skill.id}>
+                {skills.map(skill => <div key={skill._id}>
 
                     <div className="bg-base-200 dark:bg-gray-800/50 w-full shadow-xl border-[3px] border-transparent hover:border-secondary rounded-xl duration-300 text-black dark:text-base-100 flex gap-5 items-center">
                         <figure className="p-5 md:p-7 lg:p-10 w-1/2">
