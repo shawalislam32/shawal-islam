@@ -64,7 +64,7 @@ export default function Navbar() {
               <Link onClick={() => setActive('dashboard')} href={`/dashboard`} className={`h-8 w-8 flex items-center justify-center  rounded-lg tooltip  tooltip-bottom ${active === 'dashboard' && 'bg-gray-300'}`} data-tip="Dashboard">
                 <MdOutlineDashboard className={`font-bold text-[26px] dark:text-base-100 text-black ${active === 'dashboard' && 'dark:text-black'}`} />
               </Link>
-              <div className='tooltip tooltip-bottom mt-[5px]' data-tip={`${theme === 'dark' ? 'Dark Theme' : 'Light Theme'}`}>
+              <div className='mt-[5px]'>
                 <ThemeToggle />
               </div>
             </div>

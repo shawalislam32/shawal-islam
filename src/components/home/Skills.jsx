@@ -6,7 +6,7 @@ import Image from 'next/image';
 import React from 'react';
 import LoadingPage from '../shared/LoadingPage';
 
-const loadProjects = async () => {
+const loadSkills = async () => {
     return await getSkills();
 };
 
@@ -17,7 +17,7 @@ const Skills = () => {
         data: skills,
         isLoading,
         isError,
-    } = useQuery({ queryKey: ['projects'], queryFn: loadProjects });
+    } = useQuery({ queryKey: ['skills'], queryFn: loadSkills });
 
     if (isLoading) {
         return <LoadingPage />;

@@ -13,7 +13,7 @@ const Banner = () => {
         <div className='flex flex-col lg:flex-row items-center justify-between rounded-xl bg-base-200 dark:bg-gray-800/50 p-5 md:p-10 lg:px-5 lg:py-[85px] gap-5 backdrop-blur-[2px] '>
             <div className="flex flex-col items-center justify-center w-full lg:w-1/2">
                 <div className="p-2 border-secondary border-[2px] hover:bg-blue-500/20 duration-300 rounded-2xl lg:rounded-full">
-                    <Image src={`/shawal.png`} alt='Shawal Islam Photo' height={1080} width={1080} className='rounded-2xl lg:rounded-full w-[200px] md:w-[250px] lg:w-[300px] mx-auto' />
+                    <Image src={`/shawal.png`} alt='Shawal Islam Photo' height={1080} width={1080} className='rounded-[10px] lg:rounded-full w-[200px] md:w-[250px] lg:w-[300px] mx-auto' />
                 </div>
                 {/* links */}
                 <div className="flex gap-3 items-center justify-center mt-10">
