@@ -11,21 +11,21 @@ const DashSidebar = () => {
         <div className="pt-[77px] h-screen w-52 hidden lg:block">
             {/* for desktop */}
             <div className=' h-[calc(100vh-77px)] bg-base-300 dark:bg-gray-900/50  flex flex-col gap-3 p-2 border-r-2 border-r-secondary'>
-                <Link href={`/dashboard`} className={`flex items-center gap-2 p-1 rounded-lg  ${pathName === '/dashboard' && 'bg-base-100 text-black'}`}>
+                <Link href={`/dashboard`} className={`flex items-center gap-2 p-1 rounded-lg font-semibold ${pathName === '/dashboard' ? 'bg-base-100 text-black' : 'dark:text-base-100'}`}>
                     <MdOutlineManageHistory />
-                    <span className={` ${pathName === '/dashboard' ? 'bg-base-100 text-black' : 'text-black dark:text-base-100 font-semibold'}`}>Dashboard</span>
+                    <span>Dashboard</span>
                 </Link>
-                <Link href={`/dashboard/add-skill`} className={`flex items-center gap-2 p-1 rounded-lg ${pathName === '/dashboard/add-skill' && 'bg-base-100 text-black'}`}>
+                <Link href={`/dashboard/add-skill`} className={`flex items-center gap-2 p-1 rounded-lg font-semibold ${pathName === '/dashboard/add-skill' ? 'bg-base-100 text-black' : 'dark:text-base-100'}`}>
                     <MdOutlineManageHistory />
-                    <span className={` ${pathName === '/dashboard/add-skill' ? 'bg-base-100 text-black' : 'text-black dark:text-base-100 font-semibold'}`}>Add Skill</span>
+                    <span>Add Skill</span>
                 </Link>
-                <Link href={`/dashboard/manage-projects`} className={`flex items-center gap-2 p-1 rounded-lg ${pathName === '/dashboard/manage-projects' && 'bg-base-100 text-black'}`}>
+                <Link href={`/dashboard/manage-projects`} className={`flex items-center gap-2 p-1 rounded-lg font-semibold ${pathName === '/dashboard/manage-projects' ? 'bg-base-100 text-black' : 'dark:text-base-100'}`}>
                     <MdOutlineManageHistory />
-                    <span className={` ${pathName === '/dashboard/manage-projects' ? 'bg-base-100 text-black' : 'text-black dark:text-base-100 font-semibold'}`}>Manage Projects</span>
+                    <span>Manage Projects</span>
                 </Link>
-                <Link href={`/dashboard/manage-skills`} className={`flex items-center gap-2 p-1 rounded-lg ${pathName === '/dashboard/manage-skills' && 'bg-base-100 text-black'}`}>
+                <Link href={`/dashboard/manage-skills`} className={`flex items-center gap-2 p-1 rounded-lg font-semibold ${pathName === '/dashboard/manage-skills' ? 'bg-base-100 text-black' : 'dark:text-base-100'}`}>
                     <MdOutlineManageHistory />
-                    <span className={` ${pathName === '/dashboard/manage-skills' ? 'bg-base-100 text-black' : 'text-black dark:text-base-100 font-semibold'}`}>Manage Skills</span>
+                    <span>Manage Skills</span>
                 </Link>
                 <div>
                     <ThemeToggle />
