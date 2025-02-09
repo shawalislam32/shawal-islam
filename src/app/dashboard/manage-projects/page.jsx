@@ -1,11 +1,7 @@
 import React from 'react';
 
 const ManageProjects = () => {
-    return (
-        <div>
-            ManageProjects
-        </div>
-    );
+  return <div>ManageProjects</div>;
 };
 
 export default ManageProjects;

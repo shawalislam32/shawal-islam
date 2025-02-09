@@ -1,11 +1,11 @@
 /** @type {import('tailwindcss').Config} */
-import daisyui from 'daisyui'
-export default {
+import daisyui from 'daisyui';
+const modules = {
   darkMode: 'class',
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
@@ -18,3 +18,5 @@ export default {
   },
   plugins: [daisyui],
 };
+
+export default modules;
