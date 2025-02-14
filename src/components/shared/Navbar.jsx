@@ -13,6 +13,7 @@ import { HiRectangleGroup } from 'react-icons/hi2';
 import { useTheme } from 'next-themes';
 import { ActiveContext } from '@/providers/ActiveProvider';
 import { usePathname } from 'next/navigation';
+import { motion } from 'framer-motion';
 
 export default function Navbar() {
   const pathName = usePathname();
@@ -30,7 +31,11 @@ export default function Navbar() {
   const isDarkMode = resolvedTheme === 'dark';
 
   return (
-    <nav>
+    <motion.nav
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       {!isDashboard && (
         <div className='fixed z-40 flex w-full justify-center backdrop-blur-[10px]'>
           <div className='relative flex w-full items-center justify-between p-2 md:p-5'>
@@ -120,10 +125,14 @@ export default function Navbar() {
 
             {/* hire me button */}
             <div className='flex w-1/2 justify-end lg:w-1/3'>
-              <button className='btn flex items-center gap-2 border px-2'>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.9 }}
+                className='btn flex items-center gap-2 border px-2'
+              >
                 <HiRectangleGroup className='text-xl text-secondary md:text-2xl' />
                 <span className='font-bold md:text-lg'>Contact me</span>
-              </button>
+              </motion.button>
             </div>
 
             {/* links mobile devces */}
@@ -218,6 +227,6 @@ export default function Navbar() {
           </div>
         </div>
       )}
-    </nav>
+    </motion.nav>
   );
 }

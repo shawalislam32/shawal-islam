@@ -12,6 +12,7 @@ import {
 import { FaArrowRightLong } from 'react-icons/fa6';
 import { MdOutlineFileDownload } from 'react-icons/md';
 import { Typewriter } from 'react-simple-typewriter';
+import { motion } from 'framer-motion';
 
 const Banner = () => {
   return (
@@ -86,20 +87,24 @@ const Banner = () => {
           aliquid?
         </p>
         <div className='flex gap-4 pt-3'>
-          <Link
-            href={`https://drive.google.com/uc?export=download&id=1fXoyWDzFV_VS81ISMkK-G0vCHc7_nw8j`}
-            className='duration-300lex btn btn-outline items-center gap-2 hover:bg-black dark:border-white dark:text-white hover:dark:bg-base-100 hover:dark:text-black'
-          >
-            <span>Download Resume</span>
-            <MdOutlineFileDownload />
-          </Link>
-          <Link
-            href={`/about`}
-            className='btn btn-outline flex items-center gap-2 duration-300 hover:bg-black dark:border-white dark:text-white hover:dark:bg-base-100 hover:dark:text-black'
-          >
-            <span>More</span>
-            <FaArrowRightLong />
-          </Link>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.9 }}>
+            <Link
+              href={`https://drive.google.com/uc?export=download&id=1fXoyWDzFV_VS81ISMkK-G0vCHc7_nw8j`}
+              className='duration-300lex btn btn-outline items-center gap-2 hover:bg-black dark:border-white dark:text-white hover:dark:bg-base-100 hover:dark:text-black'
+            >
+              <span>Download Resume</span>
+              <MdOutlineFileDownload />
+            </Link>
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.9 }}>
+            <Link
+              href={`#about`}
+              className='btn btn-outline flex items-center gap-2 duration-300 hover:bg-black dark:border-white dark:text-white hover:dark:bg-base-100 hover:dark:text-black'
+            >
+              <span>More</span>
+              <FaArrowRightLong />
+            </Link>
+          </motion.div>
         </div>
       </div>
     </div>

@@ -34,7 +34,7 @@ const ProblemSolving = () => {
     <div>
       <div className='text-black dark:text-base-100'>
         {filteredProjects.map((project, index) => (
-          <div key={project._id}>Project {index + 1}</div>
+          <div key={project._id}>PS Project {index + 1}</div>
         ))}
       </div>
     </div>
